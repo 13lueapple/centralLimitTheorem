@@ -33,7 +33,6 @@ def mainFunc(*args, **kwargs):
     plt.xlabel("sum of dice")
     plt.ylabel("how many times")    
     fig, ax = plt.subplots()
-    ax.plot(x, y)
     ax.grid(True)
     ax.bar(x, y, color="y") 
     display(fig, target="display", append=True)
