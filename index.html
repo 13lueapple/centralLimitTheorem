@@ -6,12 +6,30 @@
     <title>중심극한정리</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <input id="tryAmount" type="text" placeholder="시행 횟수를 입력하세요.">
-    <input id="sumAmount" type="text" placeholder="표본 갯수를 입력하세요.">
-    <input id="weight" type="text" placeholder="1~6의 가중치 띄어쓰기로 구분 (예: 2 3 1 3 3 2)">
+    <h1 id="title">
+        중심극한정리 시각화<br>
+    </h1>
+    <h2 id="description">
+        한 번의 시행을 표본 갯수만큼 주사위를 뽑아 굴려 나온 수의 합으로 설정.<br> 합의 분포가 표본 갯수가 많아질 수록 정규분포에 근사한다는 것을 시각화.
+    </h2>
+    <div>
+        시행 횟수를 입력하세요.
+        <input id="tryAmount" type="text">
+    </div>
+    <div>
+        뽑을 표본 갯수를 입력하세요.
+        <input id="sumAmount" type="text">
+    </div>
+    <div>
+        주사위 눈 1~6의 가중치를 입력, 띄어쓰기로 구분 (예: 2 3 1 3 3 2)
+        <input id="weight" type="text">
+    </div>
+    
     <button id="defineVariable" py-click="mainFunc">실행</button>
+    <button id="defineVariable" py-click="clearFunc">지우기</button>
     <script type="py" src="Dice.py" config="pyscript.toml"></script>
     <div id="display"></div>
 </body>

@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from pyscript import display
 from pyweb import pydom
 
+
 def mainFunc(*args, **kwargs):
     dice = [1,2,3,4,5,6]
     # tryAmount = int(input("시도 횟수 : "))
@@ -29,8 +30,16 @@ def mainFunc(*args, **kwargs):
         x.append(h[0])
         y.append(h[1])
         
+    plt.xlabel("sum of dice")
+    plt.ylabel("how many times")    
     fig, ax = plt.subplots()
     ax.plot(x, y)
     ax.grid(True)
-    ax.bar(x, y, color="y")
-    display(fig, target="display", append=False)
+    ax.bar(x, y, color="y") 
+    display(fig, target="display", append=True)
+    
+def clearFunc(*args, **kwargs):
+    plt.close("all")
+    display("",target="display", append=False)
+    
+    
